@@ -1,0 +1,54 @@
+---
+title: "dictionary"
+tags: ""
+---
+
+## comprehension
+
+zip
+
+    keys = ['a', 'b', 'c']
+    values = [1, 2, 3]
+    d = dict(zip(keys, values))
+
+> d = {'a': 1, 'b': 2, 'c': 3}
+
+-   数列表中个元素出现的次数
+
+      my_list =['hello','hi', 'hello', 'today', 'morning', 'again', 'hello']
+      my_dict = {k:my_list.count(k) for k in my_list}  # .count() 从列表中数
+    print(my_dict)
+
+### count frequency in the dictionary
+
+    def word_frequency(filename):
+        word_count_list = []
+        word_freq = {}
+        text = open(filename, "r").read().lower().split()
+        word_freq = [text.count(p) for p in text]
+        dictionary = dict(zip(text,word_freq))
+        return dictionary
+
+print word_frequency("text.txt")
+print word_frequency("text.txt")
+
+## Unpacking dictionary
+
+### \*\* operator
+
+    def parrot(voltage, state='a stiff', action='voom'):
+    print("-- This parrot wouldn't", action, end=' ')
+    print("if you put", voltage, "volts through it.", end=' ')
+    print("E's", state, "!")
+    d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
+    parrot(**d)
+
+    OUTPUT This parrot wouldn't VOOM if you put four million volts through it. E's bleedin' demised !
+
+### \* operator
+
+    list(range(3, 6))            # normal call with separate arguments
+    [3, 4, 5]
+    args = [3, 6]
+    list(range(*args))            # call with arguments unpacked from a list
+    OUTPUT: [3, 4, 5]
